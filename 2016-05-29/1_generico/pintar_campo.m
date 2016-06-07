@@ -8,8 +8,8 @@ clear all
 % close all
 
 cd resultados
-load caso_22_ejecucion_26clusters1.mat
-caso='Caso 2. ';
+load caso_26_ejecucion_22clusters1.mat
+caso='Caso 3. ';
 cd ..
 cargar=1;
 end
@@ -23,7 +23,7 @@ end
 %     grid on;
 % end
 
-c_antenas=2;
+c_antenas=1;
 c_sensor=1;
 c_phi=1;
 c_theta=1;
