@@ -1,0 +1,27 @@
+ant:
+<ant>
+  <mkdir dir="C:\Users\Francisco\Documents\Universidad\Cuarto curso\TFG\2016-04-12\unico_ejecutable\lanzador\for_redistribution" />
+  <mkdir dir="C:\Users\Francisco\Documents\Universidad\Cuarto curso\TFG\2016-04-12\unico_ejecutable\lanzador\for_testing" />
+</ant>
+mcc -C -o lanzador -W WinMain:lanzador -T link:exe -d 'C:\Users\Francisco\Documents\Universidad\Cuarto curso\TFG\2016-04-12\unico_ejecutable\lanzador\for_testing' -v 'C:\Users\Francisco\Documents\Universidad\Cuarto curso\TFG\2016-04-12\unico_ejecutable\lanzador.m' 
+Compiler version: 5.1 (R2014a)
+Dependency analysis by REQUIREMENTS.
+[Warning: Adding path "C:\Users\Francisco\Documents\Universidad\Cuarto
+curso\TFG\2016-04-12\unico_ejecutable" to Compiler path instance.] 
+Parsing file "C:\Users\Francisco\Documents\Universidad\Cuarto curso\TFG\2016-04-12\unico_ejecutable\lanzador.m"
+	(Referenced from: "Compiler Command Line").
+Parsing file "C:\Program Files\MATLAB\R2014a\toolbox\compiler\deploy\deployprint.m"
+	(Referenced from: "Compiler Command Line").
+Parsing file "C:\Program Files\MATLAB\R2014a\toolbox\compiler\deploy\printdlg.m"
+	(Referenced from: "Compiler Command Line").
+Deleting 2 temporary MEX authorization files.
+Removing: 'C:\Users\FRANCI~1\AppData\Local\Temp\mathworks_tmp_4864_21123_4864.auth'.
+Removing: 'C:\Users\FRANCI~1\AppData\Local\Temp\mathworks_tmp_4864_31003_4864.auth'.
+Generating file "C:\Users\Francisco\Documents\Universidad\Cuarto curso\TFG\2016-04-12\unico_ejecutable\lanzador\for_testing\readme.txt".
+Packaging...
+Adding custom icon C:\Program Files\MATLAB\R2014a\toolbox\compiler\Resources\default_icon.ico to C:\Users\Francisco\Documents\Universidad\Cuarto curso\TFG\2016-04-12\unico_ejecutable\lanzador\for_testing\lanzador.exe.
+Attempting to embed the CTF archive into the application C:\Users\Francisco\Documents\Universidad\Cuarto curso\TFG\2016-04-12\unico_ejecutable\lanzador\for_testing\lanzador.exe.
+Finished embedding CTF archive. Deleting the external CTF archive.
+Creating the bundle...
+Web based installer created at C:\Users\Francisco\Documents\Universidad\Cuarto curso\TFG\2016-04-12\unico_ejecutable\lanzador\for_redistribution\MyAppInstaller_web.exe.
+Packaging complete.

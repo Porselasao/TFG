@@ -1,0 +1,27 @@
+ant:
+<ant>
+  <mkdir dir="C:\Users\Francisco\Documents\Universidad\Cuarto curso\TFG\2016-05-29\2_estaciones\lanzador_casos_nuevos\for_redistribution" />
+  <mkdir dir="C:\Users\Francisco\Documents\Universidad\Cuarto curso\TFG\2016-05-29\2_estaciones\lanzador_casos_nuevos\for_testing" />
+</ant>
+mcc -C -o lanzador_casos_nuevos -W WinMain:lanzador_casos_nuevos -T link:exe -d 'C:\Users\Francisco\Documents\Universidad\Cuarto curso\TFG\2016-05-29\2_estaciones\lanzador_casos_nuevos\for_testing' -v 'C:\Users\Francisco\Documents\Universidad\Cuarto curso\TFG\2016-05-29\2_estaciones\lanzador_casos_nuevos.m' 
+Compiler version: 5.1 (R2014a)
+Dependency analysis by REQUIREMENTS.
+[Warning: Adding path "C:\Users\Francisco\Documents\Universidad\Cuarto
+curso\TFG\2016-05-29\2_estaciones" to Compiler path instance.] 
+Parsing file "C:\Users\Francisco\Documents\Universidad\Cuarto curso\TFG\2016-05-29\2_estaciones\lanzador_casos_nuevos.m"
+	(Referenced from: "Compiler Command Line").
+Parsing file "C:\Program Files\MATLAB\R2014a\toolbox\compiler\deploy\deployprint.m"
+	(Referenced from: "Compiler Command Line").
+Parsing file "C:\Program Files\MATLAB\R2014a\toolbox\compiler\deploy\printdlg.m"
+	(Referenced from: "Compiler Command Line").
+Deleting 2 temporary MEX authorization files.
+Removing: 'C:\Users\FRANCI~1\AppData\Local\Temp\mathworks_tmp_8440_15786_8440.auth'.
+Removing: 'C:\Users\FRANCI~1\AppData\Local\Temp\mathworks_tmp_8440_17687_8440.auth'.
+Generating file "C:\Users\Francisco\Documents\Universidad\Cuarto curso\TFG\2016-05-29\2_estaciones\lanzador_casos_nuevos\for_testing\readme.txt".
+Packaging...
+Adding custom icon C:\Program Files\MATLAB\R2014a\toolbox\compiler\Resources\default_icon.ico to C:\Users\Francisco\Documents\Universidad\Cuarto curso\TFG\2016-05-29\2_estaciones\lanzador_casos_nuevos\for_testing\lanzador_casos_nuevos.exe.
+Attempting to embed the CTF archive into the application C:\Users\Francisco\Documents\Universidad\Cuarto curso\TFG\2016-05-29\2_estaciones\lanzador_casos_nuevos\for_testing\lanzador_casos_nuevos.exe.
+Finished embedding CTF archive. Deleting the external CTF archive.
+Creating the bundle...
+Web based installer created at C:\Users\Francisco\Documents\Universidad\Cuarto curso\TFG\2016-05-29\2_estaciones\lanzador_casos_nuevos\for_redistribution\MyAppInstaller_web.exe.
+Packaging complete.

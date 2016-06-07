@@ -1,0 +1,7 @@
+Probar los casos
+Preparar los casos para estaciones deseadas y no deseadas
+3 y 5 estaciones no deseadas
+Hacer los casos de que elija la mejor estación
+
+
+ha cambiado el elitecount??

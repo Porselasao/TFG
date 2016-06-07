@@ -1,0 +1,11 @@
+2 sensores: 6'10''    2 tipos de antena 4 cálculos 10 realizaciones --> 8.66 horas
+4 sensores: 11'00'' 12'30''   2 tipos de antena 4 cálculos 10 realizaciones --> 
+5 sensores: 11'30''
+10 sensores: 23'
+20 sensores: 43'00''
+
+1 = 6.16666
+9/5 = 11.1
+11/5 = 13.56
+21/5 = 25.9
+41/5 = 50.566

@@ -1,0 +1,3 @@
+Hablar del escenario
+sincronismo
+cómo se hace el cálculo del tiempo de vida para beamforming (dividir entre cantidad de sensores del cluster)

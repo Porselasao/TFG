@@ -1,0 +1,77 @@
+2015-09-13
+En el fichero TODO.m hago que Generate_Mobility.m y general.m funcionen a la vez,
+calculando directividad, potencia, etc. para cada instante, dados la cantidad de
+nodos y el tiempo de simulación.
+
+2016-02-11
+Primera reunión tras el primer cuatrimestre. Acordamos quedar los martes, hasta que empiece las prácticas.
+Se me pide:
+   - Meter en movilidad 3 dimensiones. HECHO Y TAMBIÉN METIDOS EN CLUSTERS
+   - Generar un .avi de la variación del campo.
+   - Generar un .avi del movimiento de los sensores en las tres dimensiones.
+
+2016-02-16
+Se añaden comentarios aclaratorios en el TODO.m. Además, se cambia para que en lugar de calcular todo y optimizar, se optimice y luego se calcule todo.
+También se cambia aque el Walk Interval sea siempre 1, de manera que la cantidad de pasos sea siempre el tiempo de simulación y así todos los nodos se
+muevan lo mismo.
+Se presentan los casos de estudio.
+
+Se me pide:
+   -Incluir los clusters en los cálculos. No solo eso, sino que los genéticos calculen cuál es la cantidad óptima de clusters.
+
+Añadible: ¿Hacer la comparación con antenas que no usen beanforming pero que sí se muevan?
+
+Modificaciones hechas hasta ahora:
+   - Para ejecutar ahora el algoritmo, dado que tenemos distintos casos, lo lanzaremos desde casos.m, donde podemos elegir las distintas opciones para cada caso.
+   - Clusters añadidos para la optimización con los genéticos.
+   - Ahora se suponen antenas con el mismo movimiento y características que no usen beanforming, para una comparación más correcta.
+   - Al ejecutar los casos, todas las variables se guardarán en un .mat cuyo nombre podemos elegir, un .mat por caso.
+   - De esta manera, se crea un script llamado representacion.m, que carga esas variables y las representa en 2D, 3D, en polar, calcula la eficiencia...
+
+2016-02-23
+Lanzamos los casos, que tardarán bastante. Se me pide añadir la localización de la estación base. En cuanto a la comparación sin beamforming, se tomará como
+referencia la localización de cada sensor. Con beamforming, se tomará como referencia el centro de cada cluster. También se me pide ir redactando los casos de estudio.
+
+2016-03-10
+Actualmente, el programa hace los cálculos por cada cluster, teniendo en cuenta que la distancia a la estación con su posición (X,Y,Z) se toma desde el centro del
+cluster. Anteriormente, no había estaciones, sino thetas y phis. Yo no sabía exactamente con qué comparar los resultados para poder calcular la eficiencia.
+
+Comentamos añadir que no haya solamente una estación, sino varias. Además, también decidimos implementar que haya "ángulos de ataque". Todo esto se llevará a cabo
+con pesos en la función Funcion_busqueda.
+La comparación se llevará a cabo de la siguiente forma: se calculará el tiempo de vida de los sensores sin beamforming con nodos en las mismas posiciones que los 
+de beamforming, pero de uno en uno en cada instante de tiempo. Siendo isotrópicas las antenas y con potencias iguales, el más alejado debería ser el que menor
+tiempo de vida presente.
+
+A fecha de 2016-03-16, el programa funciona correctamente con una estación a la que apuntar o varias. La comparación con la peor estación base ha sido añadida.
+Para una sola estación no deseada, se obtienen eficiencias menores que 1, como debería ser.
+Sigue sin funcionar 1 y 1.
+Con 4 estaciones deseadas, una de ellas tiene una eficiencia menor que 1.
+Preguntar duda sobre potencias preasignadas.
+
+2016-03-17 Skype
+Hasta ahora, ha salido del horno el caso 2. Acordamos lanzar del caso 3 en adelante con todas las nuevas mejoras. Solo serán 2 estaciones base, para 4 y para 10
+sensores.
+
+Tener en cuenta que no se está guardando la potencia aleatoria de los sensores
+
+2016-03-31
+Estamos con Pablo, porque nos hemos dado cuenta de que el diagrama de radiación no está apuntando realmente donde debería.
+Entonces, decidimos lanzar unas pruebas en las que ponemos los sensores en el eje X y apunten a distintos phis. En otra prueba, los ponemos en el eje Y.
+
+2016-04-04
+Los resultados que se han obtenido son que la eficiencia sale bien, pero ocurren cosas raras en el diagrama de radiación. Viendo los resultados con un deltheta
+y un delphi de 1, puede que no todo sea tan raro.
+Tras comparar los resultados obtenidos con deltheta y delphi distintos, se comprueba que la eficiencia es prácticamente la misma, aunque los diagramas de radiación
+sean verdaderamente distintos. De este modo, los cálculos siempre han estado bien hechos.
+
+EDIT: No estuvieron bien hechos, los array_config estaban mal.
+
+2016-04-12
+Tras solucionar el problema en el EDIT de arriba, hemos conseguido hacer ejecutables que funcionen en los PCs del compañero de Juanfra en Málaga. Con esto, podemos lanzar cientos de ejecuciones que trabajen en paralelo.
+
+
+
+
+
+
+
