@@ -1,4 +1,4 @@
-%% Caso 3. 2D carga maxima
+%% Caso 4. 2D carga maxima
 
 % NO RELLENO!!!!!!!!!!!
 % clear
@@ -39,7 +39,7 @@ close all
 figure
 
 x1=[2 5 10 20 50];
-y1=[1.803 4.446 9.720 16.080 15.668];
+y1=[1.818 4.527 10.095 19.005 21.862];
 
 % plot(x1,y1,'LineWidth',2)
 grid on;
@@ -49,7 +49,7 @@ plot(x1(2:3),y1(2:3),'k','LineWidth',2.3)
 plot([10 20],y1(2:3),'g','LineWidth',2.3)
 
 x2=[10 20 50];
-y2=[5.025 8.409 10.070];
+y2=[5.368 8.917 11.406];
 plot(x2(1:2),y2(1:2),'r','LineWidth',2.3)
 
 plot([5 10],[y1(2) y1(2)],'--')
@@ -57,7 +57,7 @@ plot([10 20],[y1(3) y1(3)],'--')
 
 
 hold off
-axis([4 21 4 11])
+% axis([4 21 4 11])
 
 xlabel('Cantidad de sensores');ylabel('Eficiencia media');
 title('Eficiencia media en función de la cantidad de clusters')
