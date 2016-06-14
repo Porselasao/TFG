@@ -7,8 +7,8 @@
 for clusters_fijados=1:2
 clearvars -except clusters_fijados
 cd resultados
-simulaciones_a_cargar=108:115;
-sensores_a_cargar='108.1.115';
+simulaciones_a_cargar=146:155;
+sensores_a_cargar='146.1.155';
 c_phi1=1;
 cantidad_realizaciones=30;
 
@@ -44,20 +44,21 @@ end
 % % % % 1 para 2 sensores, 2 para 5 sensores, 3 para 10 sensores
 % % % % 4 para 20 sensores, 5 para 50 sensores
 % for clusters_fijados=0:5
-for clusters_fijados=2
+for clusters_fijados=1:2
 cd graficas
 clearvars -except sensores_a_cargar clusters_fijados
 guardar=1;
 close all
-sensores_a_cargar='100.1.107';
-caso_titulo=', Pot. fija, 2D, ';
+sensores_a_cargar='146.1.155';
+caso_titulo=', Pot. aleatoria, 3D (400 generaciones 200 población, ';
 casos_a_cargar=['casos_' sensores_a_cargar '_'];
 clusters_fijados=num2str(clusters_fijados);
 % clusters_fijados='4';
 load(['casos_nuevos' sensores_a_cargar '_clusters_fijados=' clusters_fijados '.mat']);
 counter=0;
 
-    XtickFiguras=['16 sensores';'18 sensores';'20 sensores';'22 sensores';'24 sensores';'26 sensores';'28 sensores';'30 sensores'];
+%     XtickFiguras=['16 sensores';'18 sensores';'20 sensores';'22 sensores';'24 sensores';'26 sensores';'28 sensores';'30 sensores'];
+    XtickFiguras=['32 sens';'34 sens';'36 sens';'38 sens';'40 sens';'42 sens';'44 sens';'46 sens';'48 sens';'50 sens'];
 
 eje_X=(0.5:length(eficiencia_phi1_iso(:,1)):length(eficiencia_phi1_iso(:,1))+0.5);
 
