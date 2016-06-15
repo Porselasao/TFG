@@ -28,7 +28,7 @@ hold off
 
 xlabel('Cantidad de sensores');ylabel('Eficiencia media');
 title('Eficiencia media en función de la cantidad de clusters')
-legend('1 cluster','1/2 de 1 cluster','2 clusters','3 clusters','Clusters optimizados')
+legend('1 cluster','2 clusters','3 clusters','Clusters optimizados')
 
 %% Caso 1. 2D carga maxima
 

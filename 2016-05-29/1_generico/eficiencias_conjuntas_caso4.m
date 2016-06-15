@@ -1,35 +1,34 @@
 %% Caso 4. 2D carga maxima
 
-% NO RELLENO!!!!!!!!!!!
-% clear
-% clc
-% close all
-% 
-% x1=[2 5 10 20 50];
-% y1=[1.827 4.162 6.561 8.461 7.887];
-% 
-% plot(x1,y1,'LineWidth',2)
-% grid on;
-% hold on;
-% 
-% x2=[10 20 50];
-% y2=[3.414 4.699 5.167];
-% plot(x2,y2,'r','LineWidth',2)
-% 
-% x3=[20 50];
-% y3=[2.943 3.381];
-% plot(x3,y3,'g','LineWidth',2)
-% 
-% x4=[10 20 50];
-% y4=[6.144 7.889 5.721];
-% plot(x4,y4,'k','LineWidth',2)
-% 
-% 
-% hold off
-% 
-% xlabel('Cantidad de sensores');ylabel('Eficiencia media');
-% title('Eficiencia media en función de la cantidad de clusters')
-% legend('1 cluster','1/2 de 1 cluster','2 clusters','3 clusters','Clusters optimizados')
+clear
+clc
+close all
+
+x1=[2 5 10 20 50];
+y1=[1.818 4.527 10.095 19.005 21.862 ];
+
+plot(x1,y1,'LineWidth',2)
+grid on;
+hold on;
+
+x2=[10 20 50];
+y2=[5.368 8.917 11.406];
+plot(x2,y2,'r','LineWidth',2)
+
+x3=[20 50];
+y3=[5.837 7.201];
+plot(x3,y3,'g','LineWidth',2)
+
+x4=[10 20 50];
+y4=[10.376 16.934 14.670];
+plot(x4,y4,'k','LineWidth',2)
+
+
+hold off
+
+xlabel('Cantidad de sensores');ylabel('Eficiencia media');
+title('Eficiencia media en función de la cantidad de clusters')
+legend('1 cluster','2 clusters','3 clusters','Clusters optimizados')
 
 %% Caso 1. 2D carga maxima
 
