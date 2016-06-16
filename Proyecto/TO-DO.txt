@@ -1,3 +1,5 @@
 Hablar del escenario
 sincronismo
 cómo se hace el cálculo del tiempo de vida para beamforming (dividir entre cantidad de sensores del cluster)
+
+concluir que es muy destacable que apenas importe el tipo de antena

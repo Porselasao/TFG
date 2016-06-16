@@ -107,8 +107,8 @@ clear
 for clusters_fijados=1
 clearvars -except clusters_fijados
 cd resultados
-simulaciones_a_cargar=[26:30];
-sensores_a_cargar='26.1.30';
+simulaciones_a_cargar=[6:10];
+sensores_a_cargar='6.1.10';
 % simulaciones_a_cargar=[230];
 c_phi1=1;
 c_phi2=2;
@@ -158,8 +158,8 @@ cd graficas
 clearvars -except sensores_a_cargar clusters_fijados
 guardar=1;
 close all
-sensores_a_cargar='26.1.30';
-caso_titulo=', Pot. aleatoria, 3D, ';
+sensores_a_cargar='6.1.10';
+caso_titulo=', Pot. aleatoria, 2D, ';
 casos_a_cargar=['casos_' sensores_a_cargar '_'];
 clusters_fijados=num2str(clusters_fijados);
 % clusters_fijados='4';
