@@ -56,7 +56,7 @@ plot([10 20],[y1(3) y1(3)],'--')
 
 
 hold off
-% axis([4 21 4 11])
+axis([4 21 4 11])
 
 xlabel('Cantidad de sensores');ylabel('Eficiencia media');
 title('Eficiencia media en función de la cantidad de clusters')

@@ -29,4 +29,4 @@ grid on;
 legend('200 generaciones, 100 población','400 generaciones, 100 población','400 generaciones, 200 población');
 xlabel('Cantidad de sensores');
 ylabel('Eficiencia media');
-title('Eficiencia para caso de estudio 4 (pot. aleatoria 3D)');
+title('Eficiencia para caso de estudio 4 (carga aleatoria 3D)');
