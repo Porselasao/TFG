@@ -47,7 +47,7 @@
 for clusters_fijados=1
 cd graficas
 clearvars -except sensores_a_cargar clusters_fijados
-guardar=1;
+guardar=0;
 close all
 sensores_a_cargar='146.1.155';
 caso_titulo=', Carga aleatoria, 3D (400 generaciones 200 población), ';
@@ -65,8 +65,8 @@ eje_X=(0.5:length(eficiencia_phi1_iso(:,1)):length(eficiencia_phi1_iso(:,1))+0.5
 if clusters_fijados ~= '0'
 counter=counter+1;figura(counter)=figure;
 bar(eficiencia_phi1_iso);hold on;plot(eje_X,[1 1],'k');plot(1:length(eficiencia_phi1_iso(:,1)),mean(eficiencia_phi1_iso,2),'r','LineWidth',2);hold off;grid on;
-title(['Clusters: ' clusters_fijados caso_titulo 'Isotrópica, \it\theta = 45º, \phi = 0º']);xlabel('Sensores');ylabel('Eficiencia');set(gca,'XtickLabel',XtickFiguras);%axis([0.5 length(eficiencia_5_iso_estacion_1(:,1))+0.5 0 20]);
-
+title(['Clusters: ' clusters_fijados caso_titulo 'Isotrópica, \it\theta = 45º, \phi = 0º'],'FontSize',14);xlabel('Sensores','FontSize',14);ylabel('Eficiencia','FontSize',14);set(gca,'XtickLabel',XtickFiguras,'FontSize',14,'XLim',eje_X);
+set(1,'Color',[1 1 1])
 end
 
 if guardar

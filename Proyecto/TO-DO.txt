@@ -1,5 +1,70 @@
-Hablar del escenario
-sincronismo
-cómo se hace el cálculo del tiempo de vida para beamforming (dividir entre cantidad de sensores del cluster)
+agradecimientos
+poner en la 38 los dibujos
+nombre de los apartados de los scripts
+XXX
+piedras en un estanque página 42
+figuras página 44,54,61,89 no llegan al máximo
+página 80
+página 84,86
+87 cambiar el título y el peso
+94, pensar por qué
+página 97 arreglar las gráficas
 
-concluir que es muy destacable que apenas importe el tipo de antena
+
+PREGUNTAR
+
+Sincronismo
+
+
+
+
+anexo
+
+decir lo de las generaciones y el tiempo
+
+poner el margen de potencia
+
+materiales anisótropos
+
+enumerar mejor los objetivos
+
+añadir en la intro que hay más formas de optimizar en WSNs
+
+binomica
+
+pagina 14 no hablar más de la directividad
+
+quitar lo del espaciado entre antenas
+
+poner cómo se ha normalizado el azul para que quepa en el rojo
+
+decir que el kmeans puede dividir en 9 y 11, por ejemplo
+
+poner las comparaciones de generaciones en una tabla
+
+se mantiene cte en 2D
+
+frase de no más de 2 líneas
+
+Tabla 4.4.1.2 poner 5.1, 5.2...
+
+página 92 redactar mejor por qué el dipolo sale mejor
+
+mirar tabla 4.4.1.4. por que salen esos valores
+
+figura 4.4.1.10. poner colores en función de clusters y rayitas
+
+4.4.2.5. mirar a ver en 3D
+
+el 4.4.3.1 es un caso teórico y es de introducción al siguiente apartado
+
+gantt empecé en septiembre
+
+que quede escrito que se ha colaborado con la universidad de málaga
+
+cambiar peso por coste computacional
+
+figura 4.3.2.5. no llega al maximo
+
+
+

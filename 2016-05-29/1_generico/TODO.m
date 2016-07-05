@@ -143,8 +143,8 @@ for thetabuscado=theta
 %         deltheta1=1;
 %         delphi1=1;
         
-        amplitud1{c_antenas,c_sensores,c_phi,c_theta,instante}=20*log10(sum(sqrt(array_resultado{c_antenas,c_sensores,c_phi,c_theta,instante}(1,5,1:Numero_de_sensores)))^2/Numero_de_sensores^2);
-            
+        amplitud1{c_antenas,c_sensores,c_phi,c_theta,instante}=20*log10(sqrt(1/Numero_de_sensores*sum(array_resultado{c_antenas,c_sensores,c_phi,c_theta,instante}(1,5,1:Numero_de_sensores)^2)));
+        
         for i=1:Numero_de_sensores
             array_config3(:,:,i)=place_element(array_config4,posicion_X{c_sensores}(i,instante),posicion_Y{c_sensores}(i,instante),posicion_Z{c_sensores}(i,instante),tipo_antena,amplitud1{c_antenas,c_sensores,c_phi,c_theta,instante},fase);
         end

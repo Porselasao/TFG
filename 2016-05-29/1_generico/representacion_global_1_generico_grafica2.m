@@ -153,11 +153,11 @@
 % % % % 1 para 2 sensores, 2 para 5 sensores, 3 para 10 sensores
 % % % % 4 para 20 sensores, 5 para 50 sensores
 % for clusters_fijados=0:5
-for clusters_fijados=0
+for clusters_fijados=3
     
 cd graficas
 clearvars -except sensores_a_cargar clusters_fijados
-guardar=1;
+guardar=0;
 close all
 sensores_a_cargar='26.1.30';
 caso_titulo=', Carga aleatoria, 3D, ';
@@ -196,13 +196,14 @@ eje_X=(0.5:length(eficiencia_phi1_iso(:,1)):length(eficiencia_phi1_iso(:,1))+0.5
 if clusters_fijados ~= '0'
 counter=counter+1;figura(counter)=figure;
 subplot(2,2,1);bar(eficiencia_phi1_iso);hold on;plot(eje_X,[1 1],'k');plot(1:length(eficiencia_phi1_iso(:,1)),mean(eficiencia_phi1_iso,2),'r','LineWidth',2);hold off;grid on;
-title(['Clusters: ' clusters_fijados caso_titulo 'Iso., \it\theta = 45º, \phi = 0º']);xlabel('Sensores');ylabel('Eficiencia');set(gca,'XtickLabel',XtickFiguras);%axis([0.5 length(eficiencia_5_iso_estacion_1(:,1))+0.5 0 20]);
+title(['Clusters: ' clusters_fijados caso_titulo 'Iso., \it\theta = 45º, \phi = 0º'],'FontSize',14);xlabel('Sensores','FontSize',14);ylabel('Eficiencia','FontSize',14);set(gca,'XtickLabel',XtickFiguras,'FontSize',14,'XLim',eje_X);
 subplot(2,2,2);bar(eficiencia_phi1_dip);hold on;plot(eje_X,[1 1],'k');plot(1:length(eficiencia_phi1_dip(:,1)),mean(eficiencia_phi1_dip,2),'r','LineWidth',2);hold off;grid on;
-title(['Clusters: ' clusters_fijados caso_titulo 'Dip., \it\theta = 45º, \phi = 0º']);xlabel('Sensores');ylabel('Eficiencia');set(gca,'XtickLabel',XtickFiguras);%axis([0.5 length(eficiencia_5_iso_estacion_1(:,1))+0.5 0 20]);
+title(['Clusters: ' clusters_fijados caso_titulo 'Dip., \it\theta = 45º, \phi = 0º'],'FontSize',14);xlabel('Sensores','FontSize',14);ylabel('Eficiencia','FontSize',14);set(gca,'XtickLabel',XtickFiguras,'FontSize',14,'XLim',eje_X);
 subplot(2,2,3);bar(eficiencia_phi2_iso);hold on;plot(eje_X,[1 1],'k');plot(1:length(eficiencia_phi2_iso(:,1)),mean(eficiencia_phi2_iso,2),'r','LineWidth',2);hold off;grid on;
-title(['Clusters: ' clusters_fijados caso_titulo 'Iso., \it\theta = 45º, \phi = 45º']);xlabel('Sensores');ylabel('Eficiencia');set(gca,'XtickLabel',XtickFiguras);%axis([0.5 length(eficiencia_5_iso_estacion_1(:,1))+0.5 0 20]);
+title(['Clusters: ' clusters_fijados caso_titulo 'Iso., \it\theta = 45º, \phi = 45º'],'FontSize',14);xlabel('Sensores','FontSize',14);ylabel('Eficiencia','FontSize',14);set(gca,'XtickLabel',XtickFiguras,'FontSize',14,'XLim',eje_X);
 subplot(2,2,4);bar(eficiencia_phi2_dip);hold on;plot(eje_X,[1 1],'k');plot(1:length(eficiencia_phi2_dip(:,1)),mean(eficiencia_phi2_dip,2),'r','LineWidth',2);hold off;grid on;
-title(['Clusters: ' clusters_fijados caso_titulo 'Dip., \it\theta = 45º, \phi = 45º']);xlabel('Sensores');ylabel('Eficiencia');set(gca,'XtickLabel',XtickFiguras);%axis([0.5 length(eficiencia_5_iso_estacion_1(:,1))+0.5 0 20]);
+title(['Clusters: ' clusters_fijados caso_titulo 'Dip., \it\theta = 45º, \phi = 45º'],'FontSize',14);xlabel('Sensores','FontSize',14);ylabel('Eficiencia','FontSize',14);set(gca,'XtickLabel',XtickFiguras,'FontSize',14,'XLim',eje_X);
+set(1,'Color',[1 1 1])
 
 else
     caso_titulo=caso_titulo(3:end);

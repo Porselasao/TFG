@@ -130,44 +130,63 @@
 clear
 close all
 guardar=1;
-clusters_fijados='2';
+clusters_fijados='1';
 grafica='2';
 cd graficas
 load(['segunda_grafica_' grafica '_clusters_fijados_' clusters_fijados '.mat']);
 
-XtickFiguras=['Pot. fija, est. 1';'Pot. fija, est. 2';'Pot. alea, est. 1';'Pot. alea, est. 2'];
-% XtickFiguras=['Pot. fija, 2D, fij';'Pot. fija, 2D, mov';'Pot. alea, 2D, mov'];
-counter=0;
+XtickFiguras=['Estación 1';'Estación 2'];
+% XtickFiguras=['Pot. fija, est. 1';'Pot. fija, est. 2';'Pot. alea, est. 1';'Pot. alea, est. 2'];
 eje_X=(0.5:length(eficiencia_5_iso_estacion_1(:,1))*2:length(eficiencia_5_iso_estacion_1(:,1))*2+0.5);
 
 cd ..
-media_20_iso_estacion_1 = calcular_medias_distinto_cero(eficiencia_20_iso_estacion_1);
-media_20_iso_estacion_2 = calcular_medias_distinto_cero(eficiencia_20_iso_estacion_2);
-media_20_dip_estacion_1 = calcular_medias_distinto_cero(eficiencia_20_dip_estacion_1);
-media_20_dip_estacion_2 = calcular_medias_distinto_cero(eficiencia_20_dip_estacion_2);
+% media_20_iso_estacion_1 = calcular_medias_distinto_cero(eficiencia_20_iso_estacion_1);
+% media_20_iso_estacion_2 = calcular_medias_distinto_cero(eficiencia_20_iso_estacion_2);
+% media_20_dip_estacion_1 = calcular_medias_distinto_cero(eficiencia_20_dip_estacion_1);
+% media_20_dip_estacion_2 = calcular_medias_distinto_cero(eficiencia_20_dip_estacion_2);
 % cd graficas
-
+counter=0;
 if clusters_fijados ~= '0'
 
-counter=counter+1;figura(counter)=figure;
+counter=counter+1;figura(counter)=figure('Color',[1 1 1]);
+subplot(3,2,1);bar([eficiencia_5_iso_estacion_1(1,:);eficiencia_5_iso_estacion_2(1,:)]);hold on;plot([0.5 2.5],[1 1],'k');plot(1:length(eficiencia_5_iso_estacion_1(:,1)),[mean(eficiencia_5_iso_estacion_1(1,:)) mean(eficiencia_5_iso_estacion_2(1,:))],'r','LineWidth',2);hold off;grid on;
+title(['5 sensores, isotrópica, 2 estaciones deseadas, carga igual, 3D'],'FontSize',14);ylabel('Eficiencia','FontSize',14);set(gca,'XtickLabel',XtickFiguras,'FontSize',14);
 
-subplot(3,2,1);plotear_grafica2(eficiencia_5_iso_estacion_1,eficiencia_5_iso_estacion_2,0,0);
-title(['5 sensores, isotrópica, 3D, clusters: ' clusters_fijados ', 2 estaciones deseadas']);xlabel('Diferentes escenarios');ylabel('Eficiencia');set(gca,'XtickLabel',XtickFiguras);
+subplot(3,2,2);bar([eficiencia_5_iso_estacion_1(2,:);eficiencia_5_iso_estacion_2(2,:)]);hold on;plot([0.5 2.5],[1 1],'k');plot(1:length(eficiencia_5_iso_estacion_1(:,2)),[mean(eficiencia_5_iso_estacion_1(2,:)) mean(eficiencia_5_iso_estacion_2(2,:))],'r','LineWidth',2);hold off;grid on;
+title(['5 sensores, isotrópica, 2 estaciones deseadas, carga aleatoria, 3D'],'FontSize',14);ylabel('Eficiencia','FontSize',14);set(gca,'XtickLabel',XtickFiguras,'FontSize',14);
 
-subplot(3,2,2);plotear_grafica2(eficiencia_5_dip_estacion_1,eficiencia_5_dip_estacion_2,0,0);
-title(['5 sensores, dipolo, clusters: ' clusters_fijados ', 2 estaciones deseadas']);xlabel('Diferentes escenarios');ylabel('Eficiencia');set(gca,'XtickLabel',XtickFiguras);
+subplot(3,2,3);bar([eficiencia_10_iso_estacion_1(1,:);eficiencia_10_iso_estacion_2(1,:)]);hold on;plot([0.5 2.5],[1 1],'k');plot(1:length(eficiencia_10_iso_estacion_1(:,1)),[mean(eficiencia_10_iso_estacion_1(1,:)) mean(eficiencia_10_iso_estacion_2(1,:))],'r','LineWidth',2);hold off;grid on;
+title(['10 sensores, isotrópica, 2 estaciones deseadas, carga igual, 3D'],'FontSize',14);ylabel('Eficiencia','FontSize',14);set(gca,'XtickLabel',XtickFiguras,'FontSize',14);
 
-subplot(3,2,3);plotear_grafica2(eficiencia_10_iso_estacion_1,eficiencia_10_iso_estacion_2,0,0);
-title(['10 sensores, isotrópica, 3D, clusters: ' clusters_fijados ', 2 estaciones deseadas']);xlabel('Diferentes escenarios');ylabel('Eficiencia');set(gca,'XtickLabel',XtickFiguras);
+subplot(3,2,4);bar([eficiencia_10_iso_estacion_1(2,:);eficiencia_10_iso_estacion_2(2,:)]);hold on;plot([0.5 2.5],[1 1],'k');plot(1:length(eficiencia_10_iso_estacion_1(:,2)),[mean(eficiencia_10_iso_estacion_1(2,:)) mean(eficiencia_10_iso_estacion_2(2,:))],'r','LineWidth',2);hold off;grid on;
+title(['10 sensores, isotrópica, 2 estaciones deseadas, carga aleatoria, 3D'],'FontSize',14);ylabel('Eficiencia','FontSize',14);set(gca,'XtickLabel',XtickFiguras,'FontSize',14);
 
-subplot(3,2,4);plotear_grafica2(eficiencia_10_dip_estacion_1,eficiencia_10_dip_estacion_2,0,0);
-title(['10 sensores, dipolo, clusters: ' clusters_fijados ', 2 estaciones deseadas']);xlabel('Diferentes escenarios');ylabel('Eficiencia');set(gca,'XtickLabel',XtickFiguras);
+subplot(3,2,5);bar([eficiencia_20_iso_estacion_1(1,:);eficiencia_20_iso_estacion_2(1,:)]);hold on;plot([0.5 2.5],[1 1],'k');plot(1:length(eficiencia_20_iso_estacion_1(:,1)),[mean(eficiencia_20_iso_estacion_1(1,:)) mean(eficiencia_20_iso_estacion_2(1,:))],'r','LineWidth',2);hold off;grid on;
+title(['20 sensores, isotrópica, 2 estaciones deseadas, carga igual, 3D'],'FontSize',14);ylabel('Eficiencia','FontSize',14);set(gca,'XtickLabel',XtickFiguras,'FontSize',14);
 
-subplot(3,2,5);plotear_grafica2(eficiencia_20_iso_estacion_1,eficiencia_20_iso_estacion_2,media_20_iso_estacion_1,media_20_iso_estacion_2);
-title(['20 sensores, isotrópica, 3D, clusters: ' clusters_fijados ', 2 estaciones deseadas']);xlabel('Diferentes escenarios');ylabel('Eficiencia');set(gca,'XtickLabel',XtickFiguras);
+subplot(3,2,6);bar([eficiencia_20_iso_estacion_1(2,:);eficiencia_20_iso_estacion_2(2,:)]);hold on;plot([0.5 2.5],[1 1],'k');plot(1:length(eficiencia_20_iso_estacion_1(:,2)),[mean(eficiencia_20_iso_estacion_1(2,:)) mean(eficiencia_20_iso_estacion_2(2,:))],'r','LineWidth',2);hold off;grid on;
+title(['20 sensores, isotrópica, 2 estaciones deseadas, carga aleatoria, 3D'],'FontSize',14);ylabel('Eficiencia','FontSize',14);set(gca,'XtickLabel',XtickFiguras,'FontSize',14);
 
-subplot(3,2,6);plotear_grafica2(eficiencia_20_dip_estacion_1,eficiencia_20_dip_estacion_2,media_20_dip_estacion_1,media_20_dip_estacion_2);
-title(['20 sensores, dipolo, clusters: ' clusters_fijados ', 2 estaciones deseadas']);xlabel('Diferentes escenarios');ylabel('Eficiencia');set(gca,'XtickLabel',XtickFiguras);
+
+% 
+% counter=counter+1;figura(counter)=figure;
+% subplot(3,2,1);bar([eficiencia_5_dip_estacion_1(1,:);eficiencia_5_dip_estacion_2(1,:)]);hold on;plot([0.5 2.5],[1 1],'k');plot(1:length(eficiencia_5_dip_estacion_1(:,1)),[mean(eficiencia_5_dip_estacion_1(1,:)) mean(eficiencia_5_dip_estacion_2(1,:))],'r','LineWidth',2);hold off;grid on;
+% title(['5 sensores, dipolo, clusters: ' clusters_fijados ', 2 estaciones deseadas, carga igual 3D']);ylabel('Eficiencia');set(gca,'XtickLabel',XtickFiguras);
+% 
+% subplot(3,2,2);bar([eficiencia_5_dip_estacion_1(2,:);eficiencia_5_dip_estacion_2(2,:)]);hold on;plot([0.5 2.5],[1 1],'k');plot(1:length(eficiencia_5_dip_estacion_1(:,2)),[mean(eficiencia_5_dip_estacion_1(2,:)) mean(eficiencia_5_dip_estacion_2(2,:))],'r','LineWidth',2);hold off;grid on;
+% title(['5 sensores, dipolo, clusters: ' clusters_fijados ', 2 estaciones deseadas, carga aleatoria 3D'],'FontSize',14);ylabel('Eficiencia');set(gca,'XtickLabel',XtickFiguras);
+% 
+% subplot(3,2,3);bar([eficiencia_10_dip_estacion_1(1,:);eficiencia_10_dip_estacion_2(1,:)]);hold on;plot([0.5 2.5],[1 1],'k');plot(1:length(eficiencia_10_dip_estacion_1(:,1)),[mean(eficiencia_10_dip_estacion_1(1,:)) mean(eficiencia_10_dip_estacion_2(1,:))],'r','LineWidth',2);hold off;grid on;
+% title(['10 sensores, dipolo, clusters: ' clusters_fijados ', 2 estaciones deseadas, carga igual 3D']);ylabel('Eficiencia');set(gca,'XtickLabel',XtickFiguras);
+% 
+% subplot(3,2,4);bar([eficiencia_10_dip_estacion_1(2,:);eficiencia_10_dip_estacion_2(2,:)]);hold on;plot([0.5 2.5],[1 1],'k');plot(1:length(eficiencia_10_dip_estacion_1(:,2)),[mean(eficiencia_10_dip_estacion_1(2,:)) mean(eficiencia_10_dip_estacion_2(2,:))],'r','LineWidth',2);hold off;grid on;
+% title(['10 sensores, dipolo, clusters: ' clusters_fijados ', 2 estaciones deseadas, carga aleatoria 3D']);ylabel('Eficiencia');set(gca,'XtickLabel',XtickFiguras);
+% 
+% subplot(3,2,5);bar([eficiencia_20_dip_estacion_1(1,:);eficiencia_20_dip_estacion_2(1,:)]);hold on;plot([0.5 2.5],[1 1],'k');plot(1:length(eficiencia_20_dip_estacion_1(:,1)),[mean(eficiencia_20_dip_estacion_1(1,:)) mean(eficiencia_20_dip_estacion_2(1,:))],'r','LineWidth',2);hold off;grid on;
+% title(['20 sensores, dipolo, clusters: ' clusters_fijados ', 2 estaciones deseadas, carga igual 3D']);ylabel('Eficiencia');set(gca,'XtickLabel',XtickFiguras);
+% 
+% subplot(3,2,6);bar([eficiencia_20_dip_estacion_1(2,:);eficiencia_20_dip_estacion_2(2,:)]);hold on;plot([0.5 2.5],[1 1],'k');plot(1:length(eficiencia_20_dip_estacion_1(:,2)),[mean(eficiencia_20_dip_estacion_1(2,:)) mean(eficiencia_20_dip_estacion_2(2,:))],'r','LineWidth',2);hold off;grid on;
+% title(['20 sensores, dipolo, clusters: ' clusters_fijados ', 2 estaciones deseadas, carga aleatoria 3D']);ylabel('Eficiencia');set(gca,'XtickLabel',XtickFiguras);
 
 
 else
@@ -209,10 +228,10 @@ end
 
 
 cd graficas
-if guardar
-    archivo_a_guardar='grafica2_';
-    casos_a_cargar='casos_47.1.50_';
-    
-    savefig(figura,[archivo_a_guardar casos_a_cargar 'clusters_fijados_' clusters_fijados '.fig'])
-end
+% if guardar
+%     archivo_a_guardar='grafica2_';
+%     casos_a_cargar='casos_47.1.50_';
+%     
+%     savefig(figura,[archivo_a_guardar casos_a_cargar 'clusters_fijados_' clusters_fijados '.fig'])
+% end
 cd ..

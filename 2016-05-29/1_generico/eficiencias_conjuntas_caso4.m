@@ -19,16 +19,18 @@ x3=[20 50];
 y3=[5.837 7.201];
 plot(x3,y3,'g','LineWidth',2)
 
-x4=[10 20 50];
-y4=[10.376 16.934 14.670];
-plot(x4,y4,'k','LineWidth',2)
+% x4=[10 20 50];
+% y4=[10.376 16.934 14.670];
+% plot(x4,y4,'k','LineWidth',2)
 
 
 hold off
 
-xlabel('Cantidad de sensores');ylabel('Eficiencia media');
-title('Eficiencia media en función de la cantidad de clusters')
-legend('1 cluster','2 clusters','3 clusters','Clusters optimizados')
+xlabel('Cantidad de sensores','FontSize',14);ylabel('Eficiencia media','FontSize',14);
+title('Eficiencia media en función de la cantidad de clusters','FontSize',14)
+legend('1 cluster','2 clusters','3 clusters')%,'Clusters optimizados')
+set(gca,'FontSize',14)
+set(1,'Color',[1 1 1])
 
 %% Caso 1. 2D carga maxima
 
