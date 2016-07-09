@@ -1,8 +1,8 @@
 function lanzador(ejec,numero,clusters_fijados)
 
-ejec=str2num(ejec);
-numero=str2num(numero); % Solo para .exe
-clusters_fijados=str2num(clusters_fijados);  % Solo para .exe
+% ejec=str2num(ejec);
+% numero=str2num(numero); % Solo para .exe
+% clusters_fijados=str2num(clusters_fijados);  % Solo para .exe
 
 rng(numero*10000+ejec*100+clusters_fijados);
 
@@ -12,10 +12,12 @@ if numero==1
     antenas=[0 3];sensores_fijos=1;potencia_fija=1;dimension=2;sensores=2;theta=45;phi=[0 45];
     
 elseif numero==2
-    antenas=[0 3];sensores_fijos=1;potencia_fija=1;dimension=2;sensores=5;theta=45;phi=[0 45];
+%     antenas=[0 3];sensores_fijos=1;potencia_fija=1;dimension=2;sensores=5;theta=45;phi=[0 45];
+    antenas=[0];sensores_fijos=1;potencia_fija=1;dimension=2;sensores=5;theta=45;phi=[45];
     
 elseif numero==3
-    antenas=[0 3];sensores_fijos=1;potencia_fija=1;dimension=2;sensores=10;theta=45;phi=[0 45];
+%     antenas=[0 3];sensores_fijos=1;potencia_fija=1;dimension=2;sensores=10;theta=45;phi=[0 45];
+    antenas=[0];sensores_fijos=1;potencia_fija=1;dimension=2;sensores=10;theta=45;phi=[45];
     
 elseif numero==4
     antenas=[0 3];sensores_fijos=1;potencia_fija=1;dimension=2;sensores=20;theta=45;phi=[0 45];

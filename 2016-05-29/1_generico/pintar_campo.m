@@ -8,7 +8,8 @@ clear all
 % close all
 
 cd resultados
-load caso_29_ejecucion_22clusters1.mat
+load caso_1_ejecucion_22clusters1.mat
+% load caso_2_ejecucion_1clusters1.mat
 caso='Caso 4. ';
 cd ..
 cargar=1;
@@ -23,7 +24,7 @@ end
 %     grid on;
 % end
 
-c_antenas=2;
+c_antenas=1;
 c_sensor=1;
 c_phi=1;
 c_theta=1;
@@ -93,7 +94,7 @@ for i=1:(tiempo_de_simulacion)
     hold on
     if normalizado
         polar(t(1:end),[Etot1{c_antenas,c_sensor,c_phi,c_theta,i,1}(vector_thetas(c_theta)+1,:) Etot1{c_antenas,c_sensor,c_phi,c_theta,i,1}(vector_thetas(c_theta)+1,1)]/max(Etot1{c_antenas,c_sensor,c_phi,c_theta,i,1}(vector_thetas(c_theta)+1,:)),'r');
-        polar(t(1:end),[Etot{c_antenas,c_sensor,c_phi,c_theta,i,1}(vector_thetas(c_theta)+1,:) Etot{c_antenas,c_sensor,c_phi,c_theta,i,1}(vector_thetas(c_theta)+1,1)]/max(Etot{c_antenas,c_sensor,c_phi,c_theta,i,1}(vector_thetas(c_theta)+1,:)),LineSpec);
+        polar(t(1:end),[Etot{c_antenas,c_sensor,c_phi,c_theta,i,1}(vector_thetas(c_theta)+1,:) Etot{c_antenas,c_sensor,c_phi,c_theta,i,1}(vector_thetas(c_theta)+1,1)]/max(Etot{c_antenas,c_sensor,c_phi,c_theta,i,1}(vector_thetas(c_theta)+1,:))*max(Etot1{c_antenas,c_sensor,c_phi,c_theta,i,1}(vector_thetas(c_theta)+1,:)),LineSpec);
     else
         polar(t(1:end),[Etot1{c_antenas,c_sensor,c_phi,c_theta,i,1}(vector_thetas(c_theta)+1,:) Etot1{c_antenas,c_sensor,c_phi,c_theta,i,1}(vector_thetas(c_theta)+1,1)],'r');
         polar(t(1:end),[Etot{c_antenas,c_sensor,c_phi,c_theta,i,1}(vector_thetas(c_theta)+1,:) Etot{c_antenas,c_sensor,c_phi,c_theta,i,1}(vector_thetas(c_theta)+1,1)],LineSpec);
@@ -145,16 +146,12 @@ for i=1:(tiempo_de_simulacion)
     P=polar(t,1.00001*ones(size(t)));
     set(P, 'Visible', 'off')
     hold on
-%     if normalizado
-%         polar(t(1:end),[Etot1{c_antenas,c_sensor,c_phi,c_theta,i,1}(:,vector_phis(c_phi)+1)' Etot1{c_antenas,c_sensor,c_phi,c_theta,i,1}(:,vector_phis(c_phi)+1)' Etot1{c_antenas,c_sensor,c_phi,c_theta,i,1}(1,vector_phis(c_phi)+1)]/max(Etot1{c_antenas,c_sensor,c_phi,c_theta,i,1}(:,vector_phis(c_phi)+1)'),'r');
-%         polar(t(1:end),[Etot{c_antenas,c_sensor,c_phi,c_theta,i,1}(:,vector_phis(c_phi)+1)' Etot{c_antenas,c_sensor,c_phi,c_theta,i,1}(:,vector_phis(c_phi)+1)' Etot{c_antenas,c_sensor,c_phi,c_theta,i,1}(1,vector_phis(c_phi)+1)]/max(Etot{c_antenas,c_sensor,c_phi,c_theta,i,1}(:,vector_phis(c_phi)+1)'),LineSpec);
-%     else
-%         polar(t(1:end),[Etot1{c_antenas,c_sensor,c_phi,c_theta,i,1}(:,vector_phis(c_phi)+1)' Etot1{c_antenas,c_sensor,c_phi,c_theta,i,1}(:,vector_phis(c_phi)+1)' Etot1{c_antenas,c_sensor,c_phi,c_theta,i,1}(1,vector_phis(c_phi)+1)],'r');
-%         polar(t(1:end),[Etot{c_antenas,c_sensor,c_phi,c_theta,i,1}(:,vector_phis(c_phi)+1)' Etot{c_antenas,c_sensor,c_phi,c_theta,i,1}(:,vector_phis(c_phi)+1)' Etot{c_antenas,c_sensor,c_phi,c_theta,i,1}(1,vector_phis(c_phi)+1)],LineSpec);
-%     end
+    a=[Etot{c_antenas,c_sensor,c_phi,c_theta,i,1}(:,vector_phis(c_phi)+1)' Etot{c_antenas,c_sensor,c_phi,c_theta,i,1}(1,vector_phis(c_phi)+1)];
+    b=[Etot1{c_antenas,c_sensor,c_phi,c_theta,i,1}(:,vector_phis(c_phi)+1)' Etot1{c_antenas,c_sensor,c_phi,c_theta,i,1}(1,vector_phis(c_phi)+1)];
     if normalizado
         polar(t(1:end),[Etot1{c_antenas,c_sensor,c_phi,c_theta,i,1}(:,vector_phis(c_phi)+1)' Etot1{c_antenas,c_sensor,c_phi,c_theta,i,1}(1,vector_phis(c_phi)+1)]/max(Etot1{c_antenas,c_sensor,c_phi,c_theta,i,1}(:,vector_phis(c_phi)+1)'),'r');
-        polar(t(1:end),[Etot{c_antenas,c_sensor,c_phi,c_theta,i,1}(:,vector_phis(c_phi)+1)' Etot{c_antenas,c_sensor,c_phi,c_theta,i,1}(1,vector_phis(c_phi)+1)]/max(Etot1{c_antenas,c_sensor,c_phi,c_theta,i,1}(:,vector_phis(c_phi)+1)'),LineSpec);
+        polar(t(1:end),[Etot{c_antenas,c_sensor,c_phi,c_theta,i,1}(:,vector_phis(c_phi)+1)' Etot{c_antenas,c_sensor,c_phi,c_theta,i,1}(1,vector_phis(c_phi)+1)]/max(Etot{c_antenas,c_sensor,c_phi,c_theta,i,1}(:,vector_phis(c_phi)+1)')...
+            *max([Etot1{c_antenas,c_sensor,c_phi,c_theta,i,1}(find(a==max(a)),vector_phis(c_phi)+1)'])/max(Etot1{c_antenas,c_sensor,c_phi,c_theta,i,1}(:,vector_phis(c_phi)+1)'),LineSpec);
     else
         polar(t(1:end),[Etot1{c_antenas,c_sensor,c_phi,c_theta,i,1}(:,vector_phis(c_phi)+1)' Etot1{c_antenas,c_sensor,c_phi,c_theta,i,1}(:,vector_phis(c_phi)+1)' Etot1{c_antenas,c_sensor,c_phi,c_theta,i,1}(1,vector_phis(c_phi)+1)],'r');
         polar(t(1:end),[Etot{c_antenas,c_sensor,c_phi,c_theta,i,1}(:,vector_phis(c_phi)+1)' Etot{c_antenas,c_sensor,c_phi,c_theta,i,1}(:,vector_phis(c_phi)+1)' Etot{c_antenas,c_sensor,c_phi,c_theta,i,1}(1,vector_phis(c_phi)+1)],LineSpec);

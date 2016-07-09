@@ -30,10 +30,12 @@ end
 
 if sensores_fijos
     for i=1:tiempo_de_simulacion
-        posicion_X{c_sensores}=dim_x*rand(Numero_de_sensores,tiempo_de_simulacion);
+%         posicion_X{c_sensores}=dim_x*rand(Numero_de_sensores,tiempo_de_simulacion);
+        posicion_X{c_sensores}=[-9 -7 -5 -3 -1 1 3 5 7 9]';
     end
     if dim_y
-        posicion_Y{c_sensores}=dim_y*rand(Numero_de_sensores,tiempo_de_simulacion);
+%         posicion_Y{c_sensores}=dim_y*rand(Numero_de_sensores,tiempo_de_simulacion);
+        posicion_Y{c_sensores}=[-2.23974923001422 1.79702676853675 1.55098003973841 -3.37388264805369 -3.81002318441623 -0.0163594801785705 4.59743958516081 -1.59614273333867 0.852677509797774 -2.76188060508863]';
     else
         posicion_Y{c_sensores}=zeros(Numero_de_sensores,tiempo_de_simulacion);
     end
@@ -143,7 +145,7 @@ for thetabuscado=theta
 %         deltheta1=1;
 %         delphi1=1;
         
-        amplitud1{c_antenas,c_sensores,c_phi,c_theta,instante}=20*log10(sqrt(1/Numero_de_sensores*sum(array_resultado{c_antenas,c_sensores,c_phi,c_theta,instante}(1,5,1:Numero_de_sensores)^2)));
+        amplitud1{c_antenas,c_sensores,c_phi,c_theta,instante}=20*log10(sqrt(1./Numero_de_sensores.*sum(array_resultado{c_antenas,c_sensores,c_phi,c_theta,instante}(1,5,1:Numero_de_sensores).^2)));
         
         for i=1:Numero_de_sensores
             array_config3(:,:,i)=place_element(array_config4,posicion_X{c_sensores}(i,instante),posicion_Y{c_sensores}(i,instante),posicion_Z{c_sensores}(i,instante),tipo_antena,amplitud1{c_antenas,c_sensores,c_phi,c_theta,instante},fase);

@@ -1,6 +1,6 @@
 %% Ejemplo de representación
 
-cargar=1;
+cargar=0;
 
 if cargar
 % clc
@@ -98,9 +98,16 @@ for i=1:(tiempo_de_simulacion)
     P=polar(t,1.00001*ones(size(t)));
     set(P, 'Visible', 'off')
     hold on
+    a=[Etot{c_antenas,c_sensor,1,1,1,1}(:,vector_phis(1)+1)' Etot{c_antenas,c_sensor,1,1,1,1}(1,vector_phis(1)+1)];
+    b=[Etot1{c_antenas,c_sensor,1,1,1,1}(:,vector_phis(1)+1)' Etot1{c_antenas,c_sensor,1,1,1,1}(1,vector_phis(1)+1)];
     
     polar(t(1:end),[Etot1{c_antenas,c_sensor,1,1,1,1}(:,vector_phis(1)+1)' Etot1{c_antenas,c_sensor,1,1,1,1}(1,vector_phis(1)+1)]/max(Etot1{c_antenas,c_sensor,1,1,1,1}(:,vector_phis(1)+1)'),'r');
-    polar(t(1:end),[Etot{c_antenas,c_sensor,1,1,1,1}(:,vector_phis(1)+1)' Etot{c_antenas,c_sensor,1,1,1,1}(1,vector_phis(1)+1)]/max(Etot1{c_antenas,c_sensor,1,1,1,1}(:,vector_phis(1)+1)'),LineSpec);
+    if c_antenas==2
+    polar(t(1:end),[Etot{c_antenas,c_sensor,1,1,1,1}(:,vector_phis(1)+1)' Etot{c_antenas,c_sensor,1,1,1,1}(1,vector_phis(1)+1)]/max(Etot{c_antenas,c_sensor,1,1,1,1}(:,vector_phis(1)+1)')...
+        *([Etot1{c_antenas,c_sensor,1,1,1,1}(vector_thetas(1),vector_phis(1)+1)'])/max(Etot1{c_antenas,c_sensor,1,1,1,1}(:,vector_phis(1)+1)'),LineSpec);
+    else
+    polar(t(1:end),[Etot{c_antenas,c_sensor,1,1,1,1}(:,vector_phis(1)+1)' Etot{c_antenas,c_sensor,1,1,1,1}(1,vector_phis(1)+1)]/max(Etot{c_antenas,c_sensor,1,1,1,1}(:,vector_phis(1)+1)'),LineSpec);%/max(Etot1{c_antenas,c_sensor,1,1,1,1}(:,vector_phis(1)+1)'),LineSpec);
+    end
     
     polar(x,y,'k')
     hold off
