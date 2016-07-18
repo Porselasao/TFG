@@ -1,8 +1,8 @@
 function lanzador(ejec,numero,clusters_fijados)
 
-% ejec=str2num(ejec);
-% numero=str2num(numero); % Solo para .exe
-% clusters_fijados=str2num(clusters_fijados);  % Solo para .exe
+ejec=str2num(ejec);
+numero=str2num(numero); % Solo para .exe
+clusters_fijados=str2num(clusters_fijados);  % Solo para .exe
 
 rng(numero*10000+ejec*100+clusters_fijados);
 

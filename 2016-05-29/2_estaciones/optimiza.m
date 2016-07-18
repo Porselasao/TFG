@@ -29,7 +29,7 @@ if (elegir_mejor_estacion==0)
         'StallGenLimit',500000,'StallTimeLimit',100000);
     
 
-    [x,fval] = ga(@(x)Funcion_de_busqueda(x, array_config,Potencia_sensores,freq_config,range_config,Numero_de_sensores,posicion_X,posicion_Y,posicion_Z,clusters_fijados),size(x,2),[],[],[],[],LB,UB,[],[],options);
+    [x,fval] = ga(@(x)funcion_de_busqueda(x, array_config,Potencia_sensores,freq_config,range_config,Numero_de_sensores,posicion_X,posicion_Y,posicion_Z,clusters_fijados),size(x,2),[],[],[],[],LB,UB,[],[],options);
 
 else
     options = gaoptimset('Generations',round(generaciones/2),'PopulationSize',round(poblacion/2),'EliteCount',1,...

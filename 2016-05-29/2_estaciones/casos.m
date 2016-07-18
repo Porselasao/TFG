@@ -1,13 +1,5 @@
 function casos(ejec,numero,antenas,sensores_fijos,potencia_fija,dimension,sensores,tiempo_de_simulacion,deltheta,delphi,deltheta1,delphi1,generaciones,poblacion,clusters_fijados)
 
-% clc
-
-antenas
-sensores_fijos
-potencia_fija
-dimension
-sensores
-
 if dimension>=1
     dim_x=30;
 end
@@ -22,7 +14,7 @@ else
     dim_z=0;
 end
 
-TODO;
+bucle_principal;
 ejec=num2str(ejec);
 numero=num2str(numero);
 clusters_fijados=num2str(clusters_fijados);

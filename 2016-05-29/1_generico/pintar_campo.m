@@ -1,6 +1,6 @@
 %% Ejemplo de representación
 
-cargar=1;
+cargar=0;
 
 if cargar
 % clc
@@ -24,7 +24,7 @@ end
 %     grid on;
 % end
 
-c_antenas=1;
+c_antenas=2;
 c_sensor=1;
 c_phi=1;
 c_theta=1;
@@ -34,7 +34,7 @@ representacion_polar=1;
 representacion_2D=0;
 representacion_3D=0;
 normalizado=1;
-funcion_theta=0;
+funcion_theta=1;
 
 vector_thetas=theta;
 vector_phis=phi;
@@ -59,10 +59,10 @@ eficiencia
 if cargar
 k=1;
 [Etot{c_antenas,c_sensor,c_phi,c_theta,instante,k},Ptot{c_antenas,c_sensor,c_phi,c_theta,instante,k},directividad{c_antenas,c_sensor,c_phi,c_theta,instante,k},Thmax{c_antenas,c_sensor,c_phi,c_theta,instante,k},Phmax{c_antenas,c_sensor,c_phi,c_theta,instante,k},directividad_buscada{c_antenas,c_sensor,c_phi,c_theta,instante,k}] = ...
-    Calacula_Campo_entero(array_resultado{c_antenas,c_sensor,c_phi,c_theta,1}(:,:,mejor_idx==k),freq_config,range_config,deltheta,delphi,vector_thetas(c_theta),vector_phis(c_phi));
+    Calcula_Campo_entero(array_resultado{c_antenas,c_sensor,c_phi,c_theta,1}(:,:,mejor_idx==k),freq_config,range_config,deltheta,delphi,vector_thetas(c_theta),vector_phis(c_phi));
             
 i=1;
-[Etot1{c_antenas,c_sensor,c_phi,c_theta,instante,i},Ptot1{c_antenas,c_sensor,c_phi,c_theta,instante,i},directividad1{c_antenas,c_sensor,c_phi,c_theta,instante,i},Thmax1{c_antenas,c_sensor,c_phi,c_theta,instante,i},Phmax1{c_antenas,c_sensor,c_phi,c_theta,instante,i},directividad_buscada1{c_antenas,c_sensor,c_phi,c_theta,instante,i}] = Calacula_Campo_entero(array_resultado1{c_antenas,c_sensor,c_phi,c_theta,instante}(:,:,i),freq_config,range_config,deltheta1,delphi1,thetabuscado,phibuscado);
+[Etot1{c_antenas,c_sensor,c_phi,c_theta,instante,i},Ptot1{c_antenas,c_sensor,c_phi,c_theta,instante,i},directividad1{c_antenas,c_sensor,c_phi,c_theta,instante,i},Thmax1{c_antenas,c_sensor,c_phi,c_theta,instante,i},Phmax1{c_antenas,c_sensor,c_phi,c_theta,instante,i},directividad_buscada1{c_antenas,c_sensor,c_phi,c_theta,instante,i}] = Calcula_Campo_entero(array_resultado1{c_antenas,c_sensor,c_phi,c_theta,instante}(:,:,i),freq_config,range_config,deltheta1,delphi1,thetabuscado,phibuscado);
 end
 %% Diagrama de radiación en 2D (polar)
 

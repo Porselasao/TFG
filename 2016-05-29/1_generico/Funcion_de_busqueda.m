@@ -1,4 +1,4 @@
-function  scores  = Funcion_de_busqueda(x,array_config,Potencia_sensores,freq_config,range_config,thetabuscado,phibuscado,Numero_de_sensores,posicion_X,posicion_Y,posicion_Z,clusters_fijados)
+function  scores  = funcion_de_busqueda(x,array_config,Potencia_sensores,freq_config,range_config,thetabuscado,phibuscado,Numero_de_sensores,posicion_X,posicion_Y,posicion_Z,clusters_fijados)
 
 global mejor_idx;
 global mejor_centro_cluster;
@@ -37,28 +37,26 @@ distancia=1;
 LANDA=1;
 for i=1:Numero_de_cluster
     
-    [directivity_dBi,Thmax,Phmax,directivity_dBi_buscada] = Calacula_Directividad2(array_config(:,:,idx==i),freq_config,range_config,deltheta,delphi,thetabuscado,phibuscado);
-
+    [directivity_dBi,Thmax,Phmax,directivity_dBi_buscada] = Calcula_Directividad(array_config(:,:,idx==i),freq_config,range_config,deltheta,delphi,thetabuscado,phibuscado);
+    
     sensores_cluster_actual=sum(idx==i);
     sincronismo=calcular_sincronismo(sensores_cluster_actual);
     
     Potencia_radiada=10.^(x(idx==i))*sincronismo;
-
-    Pontencia_recibida=10.^(directivity_dBi_buscada/10)*(LANDA)^2/(4*distancia*pi)^2./Potencia_radiada;
-    Tiempo_de_vida=Potencia_sensores(idx==i).*Pontencia_recibida/sensores_cluster_actual;
+    
+    Potencia_recibida=10.^(directivity_dBi_buscada/10)*(LANDA)^2/(4*distancia*pi)^2./Potencia_radiada;
+    Tiempo_de_vida=Potencia_sensores(idx==i).*Potencia_recibida/sensores_cluster_actual;
     optimiza(i)=min(Tiempo_de_vida);
-
+    
 end
 
 %% Potencia de los senseros
 
-scores=1/min(optimiza);  % 
+scores=1/min(optimiza);  %
 
 if scores<mejor_scores
-   mejor_scores=scores;
-   mejor_idx=idx;
-   mejor_centro_cluster=centro_cluster;
-   mejor_x=x;
+    mejor_scores=scores;
+    mejor_idx=idx;
+    mejor_centro_cluster=centro_cluster;
+    mejor_x=x;
 end
-
-%scores=pwrdB(angulo+90); %Para security issues

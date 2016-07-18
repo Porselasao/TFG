@@ -22,7 +22,7 @@ end
 
 if clusters_fijados <= sensores
 
-TODO;
+bucle_principal;
 ejec=num2str(ejec);
 numero=num2str(numero);
 clusters_fijados=num2str(clusters_fijados);
